@@ -49,7 +49,7 @@ const CardUser = (props) => {
                                     <b> {item.login} </b>
                                 </div>
                             </div>
-                                <button type="button" class="btn btn-outline-secondary w-100">Ver Repositorios</button>
+                                <button type="button" className="btn btn-outline-secondary w-100">Ver Repositorios</button>
                         </div>
                     </div>
                 ))}
