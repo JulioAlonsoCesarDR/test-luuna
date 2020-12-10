@@ -71,10 +71,11 @@ const copyClone = (id) => {
         alert("Copied the text: " + copyText.value);
 }
 const CardRepo = props => {
+    const { listRepo } = props
     return (
         <Fragment>
             <div className="row">
-                {dummy.map((item) => (
+                {listRepo.map((item) => (
                     <div key={item.id} className="col-md-6 col-sm-12 p-3">
                         <div className="card">
                             <div className="card-body row">

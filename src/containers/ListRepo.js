@@ -1,14 +1,15 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import CardRepo from '../components/CardRepo'
+import { useSelector } from 'react-redux';
 
-function ListRepo(props) {
+const ListRepo = (props) => {
+    const listRepo = useSelector( state => state.listRepo );
     return (
         <Fragment>
             <div className="container">
-            <CardRepo/>
-                {/* {props.data > 0 ?
-                    null :
+                {listRepo.length > 0 ?
+                    <CardRepo listRepo={listRepo}/>:
                     (
                         <div className="text-center">
                             <h1>
@@ -16,7 +17,7 @@ function ListRepo(props) {
                             </h1>
                         </div>
                     )
-                } */}
+                }
             </div>
         </Fragment>
     )
