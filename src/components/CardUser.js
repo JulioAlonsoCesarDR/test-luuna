@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useHistory } from "react-router-dom";
 import { getRepo } from '../services';
 import { useDispatch } from 'react-redux';
-import { actionSetListRepo } from '../redux/actions';
+import { actionSetListRepo, actionSetLoading } from '../redux/actions';
 
 
 const AvatarContainer = styled.div `
@@ -23,17 +23,19 @@ const CardUser = (props) => {
 
 
     const handleClick = (name) => {
+        dispatch(actionSetLoading(true))
         getRepo(name).then(res => {
             if(res.status === 200) {
                 dispatch(actionSetListRepo(res.data));
                 history.push("/repo");
+                dispatch(actionSetLoading(false))
             }
         })
         .catch( err =>{
             console.log('err', err)
         })
     }
-    
+
 
     const { listUsers } = props;
     return (

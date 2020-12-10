@@ -1,4 +1,4 @@
-import { CHANGE_LIST_REPO, CHANGE_LIST_USER } from "./type";
+import { CHANGE_LIST_REPO, CHANGE_LIST_USER, SET_LOADING } from "./type";
 
 export const actionSetListUsers = payload => ({
     type: CHANGE_LIST_USER,
@@ -10,3 +10,7 @@ export const actionSetListRepo = payload => ({
     payload
 })
 
+export const actionSetLoading = payload => ({
+    type: SET_LOADING,
+    payload
+})

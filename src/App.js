@@ -3,6 +3,7 @@ import NavSearch from './components/NavSearch';
 import Header from './containers/Header';
 import ListRepo from './containers/ListRepo';
 import ListUsers from './containers/ListUsers';
+import Loading from './components/Loading';
 
 import { BrowserRouter as Router, Switch, Route  } from "react-router-dom";
 import { Provider } from 'react-redux';
@@ -15,6 +16,7 @@ function App() {
       <Provider store ={store}>
         <Header/>
         <NavSearch/>
+        <Loading/>
         <Switch>
           <Route exact path='/' />
           <Route exact path='/user' component={ListUsers}/>

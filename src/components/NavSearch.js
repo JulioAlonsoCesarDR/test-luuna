@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { actionSetListUsers } from '../redux/actions';
+import { actionSetListUsers, actionSetLoading } from '../redux/actions';
 import { getUser } from '../services'
 
 
@@ -16,6 +16,7 @@ const  NavSearch= (props) => {
         setUser(e.target.value)
     }
     const handleClick = (e) => {
+        dispatch(actionSetLoading(true))
         e.preventDefault();
         if( user.trim() === "" ) {
             setError(true)
@@ -26,6 +27,7 @@ const  NavSearch= (props) => {
             if(res.status ===   200) {
                 history.push("/user");
                 dispatch(actionSetListUsers(res.data.items));
+                dispatch(actionSetLoading(false))
             }
             else(
                 dispatch(actionSetListUsers([]))

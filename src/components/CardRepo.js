@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const AvatarContainer = styled.div `
     align-items: center;
-    display: flex;useState
+    display: flex;
     justify-content: center;
     margin-right: 1rem;
     width: 3rem;
@@ -32,7 +32,7 @@ const CardRepo = props => {
                                 <div className="col-md-6 col-sm-12">
                                     <div className="d-flex align-items-center">
                                         <AvatarContainer>
-                                            <a href={item.html_url} target="_blank" rel='noreferrer'>
+                                            <a href={item.owner.url} target="_blank" rel='noreferrer'>
                                                 <AvatarLogo className='img-fluid float-start'
                                                     src={item.owner.avatar_url} alt="Avatar" title="Ir a GitHub"/>
                                             </a>

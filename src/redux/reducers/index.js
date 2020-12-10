@@ -1,4 +1,4 @@
-import { CHANGE_LIST_REPO, CHANGE_LIST_USER } from "../actions/type";
+import { CHANGE_LIST_REPO, CHANGE_LIST_USER, SET_LOADING } from "../actions/type";
 
 const changeReducer = (state, action) => {
     switch (action.type) {
@@ -12,6 +12,11 @@ const changeReducer = (state, action) => {
                 ...state,
                 listRepo: action.payload
             }
+            case SET_LOADING :
+                return {
+                    ...state,
+                    loading: action.payload
+                }
         default:
             return state;
     }
