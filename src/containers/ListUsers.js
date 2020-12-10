@@ -1,29 +1,25 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
+import React, { Fragment, useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import CardUser from '../components/CardUser'
 
-function ListUsers(props) {
-    return (
+function ListUsers() {
+    const listUser = useSelector( state => state.listUser );
+     return (
         <Fragment>
             <div className="container">
                 {
-                    props.data == null ?
-                    (
+                    listUser.length > 0 ?
+                    <CardUser listUsers={listUser}/>
+                    : (
                         <div className="text-center">
                             <h1> No hay resultados </h1>
                             <small>Prueba con otro nombre de usuario</small>
                         </div>
                     )
-                    : <CardUser/>
                 }
-                
             </div>
         </Fragment>
     )
-}
-
-ListUsers.propTypes = {
-
 }
 
 export default ListUsers
