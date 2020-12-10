@@ -12,33 +12,10 @@ const AvatarContainer = styled.div `
     display: flex;
     justify-content: center;
     width: 5rem;
-`
+`;
 const AvatarLogo = styled.img `
     border-radius: 50%;
-`
-
-/* TODO: clear Data Dummy test Prototype  */
-
-/* const dummy = [
-    {
-        avatar_url: 'https://avatars2.githubusercontent.com/u/9398944?v=4',
-        login: 'JulioAlonsoCesarDR',
-        url: 'https://api.github.com/users/JulioAlonsoCesarDR'
-    },
-    {
-        avatar_url: 'https://avatars2.githubusercontent.com/u/9398944?v=4',
-        login: 'JulioAlonsoCesarDR',
-        url: 'https://api.github.com/users/JulioAlonsoCesarDR'
-    },
-    {
-        avatar_url: 'https://avatars2.githubusercontent.com/u/9398944?v=4',
-        login: 'JulioAlonsoCesarDR',
-        url: 'https://api.github.com/users/JulioAlonsoCesarDR'
-    }
-] */
-
-
-
+`;
 const CardUser = (props) => {
 
     const dispatch = useDispatch();
@@ -92,7 +69,7 @@ const CardUser = (props) => {
 }
 
 CardUser.propTypes = {
-
+    listUsers: PropTypes.array.isRequired
 }
 
 export default CardUser

@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
 import CardRepo from '../components/CardRepo'
 import { useSelector } from 'react-redux';
 
@@ -21,10 +20,6 @@ const ListRepo = (props) => {
             </div>
         </Fragment>
     )
-}
-
-ListRepo.propTypes = {
-
 }
 
 export default ListRepo

@@ -7,13 +7,11 @@ const changeReducer = (state, action) => {
                 ...state,
                 listUser: action.payload
             }
-            break;
             case CHANGE_LIST_REPO:
             return {
                 ...state,
                 listRepo: action.payload
             }
-            break;
         default:
             return state;
     }

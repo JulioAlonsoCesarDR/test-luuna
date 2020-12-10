@@ -1,6 +1,4 @@
 import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import NavSearch from '../components/NavSearch'
 import { Link } from 'react-router-dom'
 
 function Header(props) {
@@ -18,10 +16,6 @@ function Header(props) {
             </div>
         </Fragment>
     )
-}
-
-Header.propTypes = {
-
 }
 
 export default Header
